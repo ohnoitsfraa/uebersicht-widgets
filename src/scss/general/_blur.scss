@@ -1,0 +1,4 @@
+.blur {
+  background: $bgColor;
+  backdrop-filter: blur($bgBlur);
+}

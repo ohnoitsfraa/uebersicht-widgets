@@ -1,0 +1,31 @@
+{
+  "cpus": {
+    "max": 4,
+    "refresh": 5000
+  },
+  "memory": {
+    "refresh": 3000
+  },
+  "date": {
+    "refresh": 60000
+  },
+  "time": {
+    "refresh": 1000
+  },
+  "weather": {
+    "appId": "",
+    "defaultLocation": "Brussels, BE'",
+    "refresh": 60000
+  },
+  "unsplash": {
+    "accessKey": "",
+    "collectionId": "",
+    "minutesToRefresh": 5,
+    "perPage": 50
+  },
+  "whoami": {
+    "url": "https://www.google.com",
+    "logo": "https://placeholder.pics/svg/300",
+    "refresh": 60000
+  }
+}

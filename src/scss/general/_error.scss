@@ -1,0 +1,11 @@
+.error-msg {
+  color: $errorColor;
+
+  .icon {
+    margin-right: 5px;
+  }
+
+  .text {
+    font-weight: bold;
+  }
+}
