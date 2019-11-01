@@ -6,6 +6,9 @@ const chalk = require('chalk');
 const log = console.log;
 
 const emptyDestination = () => {
+    if (!fs.existsSync(destination)){
+        fs.mkdirSync(destination);
+    }
     return new Promise((resolve, reject) => {
         fs.readdir(destination, (err, files) => {
             if (err) throw err;

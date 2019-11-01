@@ -2,12 +2,24 @@ const ncp = require('ncp').ncp;
 const rimraf = require("rimraf");
 const source = 'src';
 const destination = 'dist';
+const fontSource = './node_modules/open-weather-icons/fonts';
+const fontDestination = `${destination}/fonts`;
 const chalk = require('chalk');
 const log = console.log;
 
 const copyFiles = () => {
     return new Promise((resolve, reject) => {
-        ncp(source, destination, (err) => err ? reject(err) : resolve(`Copied files to ${destination} folder`));
+        ncp(source, destination, (err) => {
+            if (err) {
+                reject(err);
+            }
+            ncp(fontSource, fontDestination, err => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(`Copied all files to ${destination} folder`);
+            })
+        });
     })
 };
 

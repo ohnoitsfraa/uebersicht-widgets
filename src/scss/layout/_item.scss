@@ -17,5 +17,10 @@
     font-size: 0.9rem;
     position: absolute;
     left: 5px;
+
+    &.owi {
+      transform: scale(1.4);
+      margin-top: -1px;
+    }
   }
 }

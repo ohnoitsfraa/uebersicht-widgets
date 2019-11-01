@@ -20,7 +20,7 @@ export const render = ({ output, error }) => {
             <span className="text">{!weatherConfig.appId ? 'No config' : 'Invalid location'}</span>
         </div>
     ) : (
-            <div className="item weather">
+            <div className="item has-icon weather">
                 {
                     output.sys ? (
                         <span className="location">
@@ -40,8 +40,7 @@ export const render = ({ output, error }) => {
                 {
                     output.weather && output.weather.length ? (
                         <span className="info">
-                            <img className="img" alt="weather icon"
-                                src={`http://openweathermap.org/img/w/${output.weather[0].icon}.png`} />
+                            <i className={`icon owi owi-${output.weather[0].icon}`}></i>
                             <span className={`text`}>{output.weather[0].description}</span>
                         </span>
                     ) : ''
