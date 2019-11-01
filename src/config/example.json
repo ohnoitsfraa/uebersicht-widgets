@@ -10,7 +10,8 @@
     "refresh": 60000
   },
   "time": {
-    "refresh": 1000
+    "refresh": 1000,
+    "words": false
   },
   "weather": {
     "appId": "",

@@ -50,7 +50,8 @@ They range from urls, to links to a logo, the refresh time in milliseconds (unle
     "refresh": 60000
   },
   "time": {
-    "refresh": 1000
+    "refresh": 1000,
+    "words": false
   },
   "weather": {
     "appId": "",
