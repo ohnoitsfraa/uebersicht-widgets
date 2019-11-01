@@ -8,7 +8,7 @@ Once in a while you just stumble upon a great piece of software that improves yo
 [Übersicht](http://tracesof.net/uebersicht) is defnitely once of those and that's why I made some simple widgets to get started.
 Here's a preview of how it looks:
 
-![Übersicht preview](https://i.imgur.com/kDbfzBr.png)
+![Übersicht preview](https://i.imgur.com/uioHWBf.jpg)
 
 ## Installation
 
@@ -26,7 +26,7 @@ Here's a preview of how it looks:
 ### Unsplash
 
 The Unsplash widget uses the Unsplash Rest API, you will need to create an app with your own account and fill out the accessKey property in the config.
-You will also need a collection id, you can find this in the URL when you open up a public collection on the [Unsplash](https://unsplash.com/developers) website.
+You will also need a collection id, you can find this in the URL when you open up a public collection on the [Unsplash](https://unsplash.com/developers) website. This is an example of a collection id: [894](https://unsplash.com/collections/894/earth-planets)
 
 ### Open Weather Map
 The weather widget uses Open Weather Map, for this service you will need an API key. You can create it by going to the [OpenWeatherMap](https://openweathermap.org/api) website.
@@ -74,8 +74,7 @@ They range from urls, to links to a logo, the refresh time in milliseconds (unle
 
 ## ChunkWM
 
-If you use a window manager like [chunkwm](https://koekeishiya.github.io/chunkwm), you can have it play nicely with Übersicht. It has a configuration setting that is meant for custom bars inside of .chunkwmrc
-These are the settings I use for it so it leaves space at the bottom of the screen:
+If you use a window manager like [chunkwm](https://koekeishiya.github.io/chunkwm), you can have it play nicely with Übersicht. It has a configuration setting that is meant for custom bars inside of .chunkwmrc. These are the settings I use for it so it leaves space at the bottom of the screen:
 
 ```
 chunkc set custom_bar_enabled            1
