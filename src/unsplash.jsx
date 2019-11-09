@@ -16,18 +16,22 @@ const randomIntFromInterval = (max) => {
 };
 
 export const render = ({ output }) => {
-    random = randomIntFromInterval(output.length);
+    random = window.navigator.onLine ? randomIntFromInterval(output.length) : 0;
     return (
-        unsplashConfig ? (
-            output.length > random ? (
-                <div className="unsplash">
-                    <img alt="unsplash" className="image" src={output[random].urls.full} />
-                </div>
-            ) : 'error'
+        window.navigator.onLine ? (
+            unsplashConfig ? (
+                output.length > random ? (
+                    <div className="unsplash">
+                        <img alt="unsplash" className="image" src={output[random].urls.full} />
+                    </div>
+                ) : 'error'
+            ) : (
+                    <div className="error">
+                        <i className="icon far fa-exclamation-triangle" />
+                    </div>
+                )
         ) : (
-                <div className="error">
-                    no config
-            </div>
+                ''
             )
 
     )

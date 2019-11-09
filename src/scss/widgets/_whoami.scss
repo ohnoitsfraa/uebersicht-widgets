@@ -1,6 +1,10 @@
 .whoami {
-    .icon {
+    & > .icon {
         width: 25px;
         height: auto;
+    }
+
+    .error-msg {
+        margin-right: 10px;
     }
 }

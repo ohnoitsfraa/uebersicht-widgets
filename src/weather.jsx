@@ -14,37 +14,44 @@ const kelvinToCelsius = (temp) => {
 };
 
 export const render = ({ output, error }) => {
-    return error || !weatherConfig.appId || !output.name ? (
-        <div className="error-msg">
-            <i className="icon far fa-exclamation-triangle" />
-            <span className="text">{!weatherConfig.appId ? 'No config' : 'Invalid location'}</span>
-        </div>
+    return window.navigator.onLine ? (
+        error || !weatherConfig.appId || !output.name ? (
+            <div className="error-msg">
+                <i className="icon far fa-exclamation-triangle" />
+                <span className="text">{!weatherConfig.appId ? 'No config' : 'Invalid location'}</span>
+            </div>
+        ) : (
+                <div className="item has-icon weather">
+                    {
+                        output.sys ? (
+                            <span className="location">
+                                <span className="city">{output.name}, </span>
+                                <span className="country">{output.sys.country}</span>
+                                <i className="far fa-wifi-slash" />
+                            </span>
+                        ) : ''
+                    }
+                    {
+                        output.main ? (
+                            <span className="temperature">
+                                <span className="value">{kelvinToCelsius(output.main.temp)}</span>
+                                <span className="degree-icon">&#176;</span>
+                            </span>
+                        ) : ''
+                    }
+                    {
+                        output.weather ? (
+                            <span className="info">
+                                <i className={`icon owi owi-${output.weather[0].icon}`}></i>
+                                <span className={`text`}>{output.weather[0].description}</span>
+                            </span>
+                        ) : ''
+                    }
+                </div>
+            )
     ) : (
-            <div className="item has-icon weather">
-                {
-                    output.sys ? (
-                        <span className="location">
-                            <span className="city">{output.name}, </span>
-                            <span className="country">{output.sys.country}</span>
-                        </span>
-                    ) : ''
-                }
-                {
-                    output.main ? (
-                        <span className="temperature">
-                            <span className="value">{kelvinToCelsius(output.main.temp)}</span>
-                            <span className="degree-icon">&#176;</span>
-                        </span>
-                    ) : ''
-                }
-                {
-                    output.weather && output.weather.length ? (
-                        <span className="info">
-                            <i className={`icon owi owi-${output.weather[0].icon}`}></i>
-                            <span className={`text`}>{output.weather[0].description}</span>
-                        </span>
-                    ) : ''
-                }
+            <div className="error-msg">
+                <i className="fas fa-ethernet"></i>
             </div>
         )
 };
