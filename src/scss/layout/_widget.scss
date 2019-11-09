@@ -1,19 +1,19 @@
 .widget {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-right: 10px;
-  margin-right: 10px;
-  height: $widgetHeight;
-  flex: 1 0 auto;
-  justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    margin-right: 10px;
+    height: $widgetHeight;
+    flex: 1 0 auto;
+    justify-content: center;
 
-  &::after {
-    position: absolute;
-    content: '';
-    background: $accentColor;
-    width: 2px;
-    height: 50%;
-    right: 0;
-  }
+    &::after {
+        position: absolute;
+        content: "";
+        background: $accentColor;
+        width: 2px;
+        height: 50%;
+        right: 0;
+    }
 }

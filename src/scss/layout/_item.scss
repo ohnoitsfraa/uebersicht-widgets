@@ -1,26 +1,26 @@
 .item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 1rem;
-  position: relative;
-  color: $textColor;
-  min-width: 80px;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+    position: relative;
+    color: $textColor;
+    min-width: 80px;
+    justify-content: center;
 
-  &.has-icon {
-    padding-left: 30px;
-  }
-
-  .icon {
-    color: $accentColor;
-    font-size: 0.9rem;
-    position: absolute;
-    left: 5px;
-
-    &.owi {
-      transform: scale(1.4);
-      margin-top: -1px;
+    &.has-icon {
+        padding-left: 30px;
     }
-  }
+
+    .icon {
+        color: $accentColor;
+        font-size: 0.9rem;
+        position: absolute;
+        left: 5px;
+
+        &.owi {
+            transform: scale(1.4);
+            margin-top: -1px;
+        }
+    }
 }

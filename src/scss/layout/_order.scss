@@ -1,35 +1,35 @@
 .widget {
-  &#fontAwesome-jsx,
-  &#googleFonts-jsx,
-  &#index-jsx {
-    display: none;
-  }
-
-  &#whoami-jsx {
-    order: 1;
-  }
-
-  &#date-jsx {
-    order: 2;
-  }
-
-  &#time-jsx {
-    order: 3;
-  }
-
-  &#cpu-jsx {
-    order: 4;
-  }
-
-  &#memory-jsx {
-    order: 5;
-  }
-
-  &#weather-jsx {
-    order: 6;
-
-    &::after {
-      content: none;
+    &#fontAwesome-jsx,
+    &#googleFonts-jsx,
+    &#index-jsx {
+        display: none;
     }
-  }
+
+    &#whoami-jsx {
+        order: 1;
+    }
+
+    &#date-jsx {
+        order: 2;
+    }
+
+    &#time-jsx {
+        order: 3;
+    }
+
+    &#cpu-jsx {
+        order: 4;
+    }
+
+    &#memory-jsx {
+        order: 5;
+    }
+
+    &#weather-jsx {
+        order: 6;
+
+        &::after {
+            content: none;
+        }
+    }
 }
