@@ -18,6 +18,10 @@ const getWeather = async (location) => {
 
 const kelvinToCelsius = (temp) => Math.round(parseInt(temp, 10) - 273.15);
 
+const kelvinToFahrenheit = (temp) => Math.round(parseInt(temp, 10) * (9 / 5) - 459.67);
+
+const convertTemperature = (temp) => weatherConfig.unit === 'C' ? kelvinToCelsius(temp) : kelvinToFahrenheit(temp);
+
 export const render = ({ output, error }) => {
     return window.navigator.onLine ? (
         output.error || error || !weatherConfig.appId || !output.name ? (
@@ -38,8 +42,9 @@ export const render = ({ output, error }) => {
                     {
                         output.main ? (
                             <span className="temperature">
-                                <span className="value">{kelvinToCelsius(output.main.temp)}</span>
+                                <span className="value">{convertTemperature(output.main.temp)}</span>
                                 <span className="degree-icon">&#176;</span>
+                                <span className="unit">{weatherConfig.unit === 'C' ? weatherConfig.unit : 'F'}</span>
                             </span>
                         ) : ''
                     }

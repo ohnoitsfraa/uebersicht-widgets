@@ -19,6 +19,7 @@
       "city": "Brussels",
       "country": "Belgium"
     },
+    "unit": "C",
     "refresh": 7200000
   },
   "unsplash": {
