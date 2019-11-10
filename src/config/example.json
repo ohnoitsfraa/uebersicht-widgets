@@ -15,13 +15,16 @@
   },
   "weather": {
     "appId": "",
-    "defaultLocation": "Brussels, BE'",
-    "refresh": 60000
+    "defaultLocation": {
+      "city": "Brussels",
+      "country": "Belgium"
+    },
+    "refresh": 7200000
   },
   "unsplash": {
     "accessKey": "",
     "collectionId": "",
-    "minutesToRefresh": 5,
+    "refresh": 3600000,
     "perPage": 50
   },
   "whoami": {

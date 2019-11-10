@@ -1,6 +1,6 @@
 import config from './config/config';
 export const unsplashConfig = config.unsplash;
-export const refreshFrequency = unsplashConfig.minutesToRefresh * 60000;
+export const refreshFrequency = unsplashConfig.refresh;
 let random = 0;
 export const headers = new Headers({
     'Authorization': `Client-ID ${unsplashConfig.accessKey}`
