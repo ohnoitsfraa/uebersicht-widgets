@@ -33,8 +33,7 @@ The weather widget uses Open Weather Map, for this service you will need an API 
 
 ### Other
 
-The other properties in the config speak for themselves. 
-They range from urls, to links to a logo, the refresh time in milliseconds (unless specified otherwise) per widget or an certain amount a widget needs.
+The other properties in the config speak for themselves.
 
 ### Config example
 ```
@@ -55,13 +54,17 @@ They range from urls, to links to a logo, the refresh time in milliseconds (unle
   },
   "weather": {
     "appId": "",
-    "defaultLocation": "Brussels, BE'",
-    "refresh": 60000
+    "defaultLocation": {
+      "city": "Brussels",
+      "country": "Belgium"
+    },
+    "unit": "C",
+    "refresh": 7200000
   },
   "unsplash": {
     "accessKey": "",
     "collectionId": "",
-    "minutesToRefresh": 5,
+    "refresh": 3600000,
     "perPage": 50
   },
   "whoami": {
@@ -74,7 +77,9 @@ They range from urls, to links to a logo, the refresh time in milliseconds (unle
 
 ## ChunkWM
 
-If you use a window manager like [chunkwm](https://koekeishiya.github.io/chunkwm), you can have it play nicely with Übersicht. It has a configuration setting that is meant for custom bars inside of .chunkwmrc. These are the settings I use for it so it leaves space at the bottom of the screen:
+If you use a window manager like [chunkwm](https://koekeishiya.github.io/chunkwm), you can make it play nice with Übersicht. It has a configuration setting that is meant for custom bars inside of .chunkwmrc. These are the settings I use for it so it leaves space at the bottom of the screen for the bar and the windows of your applications.
+
+### My chunkwm config
 
 ```
 chunkc set custom_bar_enabled            1
@@ -83,4 +88,16 @@ chunkc set custom_bar_offset_top         0
 chunkc set custom_bar_offset_bottom      40
 chunkc set custom_bar_offset_left        0
 chunkc set custom_bar_offset_right       0 
+```
+
+You can ofcourse change the config above so the space shows on top instead of on the bottom, but you will also need to alter the scss source files to change the position of the widgets themselves. By default they show on the bottom, but if you change the justify-content property in _body.scss to flex-start, they will show on top.
+
+### body.scss
+
+```
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 ```
