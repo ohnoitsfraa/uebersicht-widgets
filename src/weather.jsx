@@ -24,7 +24,7 @@ const convertTemperature = (temp) => weatherConfig.unit === 'C' ? kelvinToCelsiu
 
 export const render = ({ output, error }) => {
     return window.navigator.onLine ? (
-        output.error || error || !weatherConfig.appId || !output.name ? (
+        output && output.error || error || !weatherConfig.appId || !output.name ? (
             <div className="error-msg">
                 <i className="icon far fa-exclamation-triangle" />
             </div>

@@ -16,11 +16,11 @@ const randomIntFromInterval = (max) => {
 };
 
 export const render = ({ output }) => {
-    random = window.navigator.onLine ? randomIntFromInterval(output.length) : 0;
+    random = window.navigator.onLine && output ? randomIntFromInterval(output.length) : 0;
     return (
         window.navigator.onLine ? (
             unsplashConfig ? (
-                output.length > random ? (
+                output && output.length > random ? (
                     <div className="unsplash">
                         <img alt="unsplash" className="image" src={output[random].urls.full} />
                     </div>
