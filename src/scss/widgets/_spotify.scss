@@ -1,0 +1,69 @@
+$dimensions: calc(#{$widgetHeight} * 0.6);
+$borderRadius: 3px;
+$pausedColor: #aaa;
+
+.widget {
+    &#spotify-jsx {
+        width: 350px;
+    }
+}
+
+.spotify {
+    width: 100%;
+
+    .artwork {
+        position: relative;
+        margin-left: 0.5rem;
+        width: $dimensions;
+        height: $dimensions;
+
+        img {
+            border-radius: $borderRadius;
+            height: 100%;
+            width: 100%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            width: $dimensions;
+            height: $dimensions;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+            border-radius: $borderRadius;
+            transition: background-color 200ms ease-in-out;
+        }
+    }
+
+    .separator {
+        color: $accentColor;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .text {
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .icon,
+    .text {
+        transition: color 200ms ease-in-out;
+    }
+
+    &.paused {
+        .icon,
+        .text {
+            color: $pausedColor;
+        }
+
+        .artwork {
+            &::after {
+                background-color: $pausedColor;
+            }
+        }
+    }
+}

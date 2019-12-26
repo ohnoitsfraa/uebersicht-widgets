@@ -31,6 +31,11 @@ export const render = ({ output, error }) => {
         ) : (
                 <div className="item has-icon weather">
                     {
+                        output.weather ? (
+                            <i className={`icon owi owi-${output.weather[0].icon}`}></i>
+                        ) : ''
+                    }
+                    {
                         output.sys ? (
                             <span className="location">
                                 <span className="city">{output.name}, </span>
@@ -51,7 +56,6 @@ export const render = ({ output, error }) => {
                     {
                         output.weather ? (
                             <span className="info">
-                                <i className={`icon owi owi-${output.weather[0].icon}`}></i>
                                 <span className={`text`}>{output.weather[0].description}</span>
                             </span>
                         ) : ''

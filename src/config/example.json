@@ -32,5 +32,9 @@
     "url": "https://www.google.com",
     "logo": "https://placeholder.pics/svg/300",
     "refresh": 60000
+  },
+  "spotify": {
+    "refresh": 100,
+    "showArtwork": true
   }
 }

@@ -9,14 +9,14 @@
     justify-content: center;
 
     &.has-icon {
-        padding-left: 30px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .icon {
         color: $accentColor;
-        font-size: 0.9rem;
-        position: absolute;
-        left: 5px;
+        font-size: calc(#{$widgetHeight} & 0.4);
+        margin-right: 10px;
 
         &.owi {
             transform: scale(1.4);
