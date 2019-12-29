@@ -35,6 +35,7 @@
   },
   "spotify": {
     "refresh": 100,
-    "showArtwork": true
+    "showArtwork": true,
+    "showProgressBar": true
   }
 }

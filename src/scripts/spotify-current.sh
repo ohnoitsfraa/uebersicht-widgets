@@ -8,7 +8,9 @@ trackInfo=`osascript <<<'tell application "Spotify"
         set trackName to name of theTrack
         set artworkUrl to artwork url of theTrack
         set playerState to player state
-        return  theArtist & "|" & trackName & "|" & artworkUrl & "|" & playerState
+        set trackDuration to duration of current track
+        set secondsPlayed to player position
+        return  theArtist & "|" & trackName & "|" & artworkUrl & "|" & playerState & "|" & trackDuration & "|" & secondsPlayed
     end tell'`;
 
 echo $trackInfo;

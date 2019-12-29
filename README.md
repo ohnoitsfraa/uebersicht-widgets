@@ -8,7 +8,7 @@ Once in a while you just stumble upon a great piece of software that improves yo
 [Übersicht](http://tracesof.net/uebersicht) is defnitely once of those and that's why I made some simple widgets to get started.
 Here's a preview of how it looks:
 
-![Übersicht preview](https://i.imgur.com/9oGNhNf.jpg)
+![Übersicht preview](https://i.imgur.com/AwJtiis.png)
 
 ## Widgets
 
@@ -86,8 +86,9 @@ The other properties in the config speak for themselves.
     "refresh": 60000
   },
   "spotify": {
-    "refresh": 1000,
-    "showArtwork": true
+    "refresh": 100,
+    "showArtwork": true,
+    "showProgressBar": true
   }
 }
 ```
@@ -101,7 +102,7 @@ If you use a window manager like [chunkwm](https://koekeishiya.github.io/chunkwm
 ```
 chunkc set custom_bar_enabled            1
 chunkc set custom_bar_all_monitors       1
-chunkc set custom_bar_offset_top         36
+chunkc set custom_bar_offset_top         24
 chunkc set custom_bar_offset_bottom      0
 chunkc set custom_bar_offset_left        0
 chunkc set custom_bar_offset_right       0 
