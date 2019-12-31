@@ -20,7 +20,7 @@ As of this moment these are the widgets that I've made:
 * time: shows the current time, optionally you can the the time spelled out in words instead showing digits
 * cpu: shows your current overall cpu usage
 * memory: shows your current memory usage
-* weather: shows the current weather for your location, if no no location is found it will use the default location in the config.
+* weather: shows the current weather for your location, if no location is found it will use the default location in the config.
 
 ## Installation
 
