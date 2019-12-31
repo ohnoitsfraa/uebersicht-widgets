@@ -52,7 +52,10 @@ The other properties in the config speak for themselves.
 ```
 {
   "style": {
-    "accent": "#FB471E"
+    "accent": "#FB471E",
+    "verticalAlign": "flex-start", // flex-end if you want it on the bottom
+    "bgBlur": "20px",
+    "textColor": "white"
   },
   "cpus": {
     "max": 4,
@@ -111,14 +114,4 @@ chunkc set custom_bar_offset_left        0
 chunkc set custom_bar_offset_right       0 
 ```
 
-You can ofcourse change the config above so the space shows on the bottom instead of on top, but you will also need to alter the scss source files to change the position of the widgets themselves. By default they show on the bottom, but if you change the justify-content property in _body.scss to flex-end, they will show on the bottom.
-
-### body.scss
-
-```
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-```
+You can ofcourse change the config above so the space shows on the bottom instead of on top, if you do, don't forget to also change it in the config.json

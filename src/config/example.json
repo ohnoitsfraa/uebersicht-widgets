@@ -1,6 +1,9 @@
 {
   "style": {
-    "accent": "#FB471E"
+    "accent": "#FB471E",
+    "verticalAlign": "flex-start",
+    "bgBlur": "20px",
+    "textColor": "white"
   },
   "cpus": {
     "max": 4,
