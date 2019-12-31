@@ -20,18 +20,16 @@
     "url": "https://github.com/ohnoitsfraa/uebersicht/issues"
   },
   "homepage": "https://github.com/ohnoitsfraa/uebersicht#readme",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^9.7.0",
     "chalk": "^2.4.2",
+    "moment": "^2.24.0",
     "ncp": "^2.0.0",
     "node-sass": "^4.13.0",
     "nodemon": "^1.19.4",
+    "open-weather-icons": "0.0.8",
     "postcss": "^7.0.21",
     "postcss-cli": "^6.1.3",
     "rimraf": "^3.0.0"
-  },
-  "dependencies": {
-    "moment": "^2.24.0",
-    "open-weather-icons": "0.0.8"
   }
 }
