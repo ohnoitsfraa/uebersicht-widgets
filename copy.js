@@ -1,27 +1,34 @@
 const ncp = require('ncp').ncp;
 const rimraf = require("rimraf");
 const source = 'src';
-const destination = 'dist';
+const destination = './dist';
 const fontSource = './node_modules/open-weather-icons/fonts';
 const fontDestination = `${destination}/fonts`;
 const chalk = require('chalk');
 const log = console.log;
+const fs = require('fs');
 
-const copyFiles = () => {
+const copyAll = () => {
+    return Promise.all([
+        copy(source, destination),
+        copy(fontSource, fontDestination)
+    ]);
+};
+
+const copy = (source, destination) => {
     return new Promise((resolve, reject) => {
-        ncp(source, destination, (err) => {
-            if (err) {
+        if(!fs.existsSync(destination)) {
+            fs.mkdir(destination, () => {});
+        }
+        ncp(source, destination, err => {
+            if(err) {
+                console.log(err)
                 reject(err);
             }
-            ncp(fontSource, fontDestination, err => {
-                if (err) {
-                    reject(err);
-                }
-                resolve(`Copied all files to ${destination} folder`);
-            })
+            resolve();
         });
-    })
-};
+    });
+}
 
 
 const deleteScssFolder = () => {
@@ -30,10 +37,8 @@ const deleteScssFolder = () => {
     })
 };
 
-const run = async () => {
-    log(chalk.black.bgGreen(await copyFiles()));
-    log(chalk.black.bgGreen(await deleteScssFolder()));
-};
-
-run().then(() => {
-});
+(async () => {
+    await copyAll();
+    await deleteScssFolder();
+    log(chalk.black.bgGreen(`Copied all files to ${destination} folder`));
+})();
