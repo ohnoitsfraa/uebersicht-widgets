@@ -30,7 +30,7 @@ const emptyDestination = () => {
 };
 
 const run = async () => {
-    log(chalk.bgGreen(await emptyDestination()))
+    log(chalk.black.bgGreen(await emptyDestination()))
 };
 
 run().then(() => {

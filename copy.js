@@ -31,8 +31,8 @@ const deleteScssFolder = () => {
 };
 
 const run = async () => {
-    log(chalk.bgGreen(await copyFiles()));
-    log(chalk.bgGreen(await deleteScssFolder()));
+    log(chalk.black.bgGreen(await copyFiles()));
+    log(chalk.black.bgGreen(await deleteScssFolder()));
 };
 
 run().then(() => {

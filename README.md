@@ -51,6 +51,9 @@ The other properties in the config speak for themselves.
 ### Config example
 ```
 {
+  "style": {
+    "accent": "#FB471E"
+  },
   "cpus": {
     "max": 4,
     "refresh": 5000

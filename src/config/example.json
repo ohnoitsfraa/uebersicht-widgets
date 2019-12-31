@@ -1,4 +1,7 @@
 {
+  "style": {
+    "accent": "#FB471E"
+  },
   "cpus": {
     "max": 4,
     "refresh": 5000

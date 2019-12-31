@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "node-sass src/scss/main.scss dist/main.css | postcss dist/main.css -u autoprefixer -r",
-    "precompile": "node ./clean",
+    "precompile": "node ./clean && node ./style-config",
     "postcompile": "node ./copy",
     "watch": "nodemon -x \"npm run compile\""
   },
