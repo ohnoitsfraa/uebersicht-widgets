@@ -1,4 +1,5 @@
 {
   "watch": ["src/"],
-  "ext": "jsx, scss"
+  "ext": "jsx, scss, sh, json",
+  "ignore": ["_style.scss"] 
 }
