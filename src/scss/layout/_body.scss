@@ -1,6 +1,11 @@
+html,
+body {
+    -webkit-text-stroke: 0.5px;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: $verticalAlign;
-    text-shadow: 1px 1px 5px black;
 }
