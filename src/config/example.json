@@ -34,11 +34,6 @@
     "refresh": 3600000,
     "perPage": 50
   },
-  "whoami": {
-    "url": "https://www.google.com",
-    "logo": "https://placeholder.pics/svg/300",
-    "refresh": 60000
-  },
   "spotify": {
     "refresh": 100,
     "showArtwork": true,
