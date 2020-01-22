@@ -8,13 +8,13 @@ Once in a while you just stumble upon a great piece of software that improves yo
 [Übersicht](http://tracesof.net/uebersicht) is defnitely once of those and that's why I made some simple widgets to get started.
 Here's a preview of how it looks:
 
-![Übersicht preview](https://i.imgur.com/AwJtiis.png)
+![Übersicht preview](https://i.imgur.com/8aFnelW.jpg)
 
 ## Widgets
 
 As of this moment these are the widgets that I've made:
 
-* whoami: a simple widget showing your username and a custom logo. Holding your Übersicht interaction shortcut and clicking on the widget will open the website set in the config, in your default browser.
+* battery: a simple widget showing your battery percentage and a dynamic battery icon. When charging it also displays a lightning bolt besides it. On a Mac without a battery the widget hides itself.
 * spotify: this widget shows the current track, with artwork. Holding your Übersicht interaction shortcut and clicking on the Spotify logo performs a play/pause command, clicking on the trackname will play the next track.
 * date: shows the current date
 * time: shows the current time, optionally you can the the time spelled out in words instead showing digits
@@ -52,26 +52,32 @@ The other properties in the config speak for themselves.
 ```
 {
   "style": {
+    "enabled": true,
     "accent": "#FB471E",
-    "verticalAlign": "flex-start", // flex-end if you want it on the bottom
+    "verticalAlign": "flex-start",
     "bgBlur": "20px",
     "textColor": "white"
   },
   "cpus": {
+    "enabled": true,
     "max": 4,
     "refresh": 5000
   },
   "memory": {
+    "enabled": true,
     "refresh": 3000
   },
   "date": {
+    "enabled": true,
     "refresh": 60000
   },
   "time": {
+    "enabled": true,
     "refresh": 1000,
     "words": false
   },
   "weather": {
+    "enabled": true,
     "appId": "",
     "defaultLocation": {
       "city": "Brussels",
@@ -81,20 +87,21 @@ The other properties in the config speak for themselves.
     "refresh": 7200000
   },
   "unsplash": {
+    "enabled": true,
     "accessKey": "",
     "collectionId": "",
     "refresh": 3600000,
     "perPage": 50
   },
-  "whoami": {
-    "url": "https://www.google.com",
-    "logo": "https://placeholder.pics/svg/300",
-    "refresh": 60000
-  },
   "spotify": {
+    "enabled": true,
     "refresh": 100,
     "showArtwork": true,
     "showProgressBar": true
+  },
+  "battery": {
+    "enabled": true,
+    "refresh": 3600000
   }
 }
 ```
@@ -114,4 +121,4 @@ chunkc set custom_bar_offset_left        0
 chunkc set custom_bar_offset_right       0 
 ```
 
-You can ofcourse change the config above so the space shows on the bottom instead of on top, if you do, don't forget to also change it in the config.json
+You can ofcourse change the config above so the space shows on the bottom instead of on top, if you do, don't forget to also change the vertical-align property in the config.json

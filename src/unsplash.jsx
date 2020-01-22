@@ -5,7 +5,7 @@ let random = 0;
 export const headers = new Headers({
     'Authorization': `Client-ID ${unsplashConfig.accessKey}`
 });
-export const command = async (dispatch) => await getCollection();
+export const command = config.unsplash.enabled ? async (dispatch) => await getCollection(): '';
 
 const getCollection = async () => {
     return await (await fetch(`https://api.unsplash.com/collections/${unsplashConfig.collectionId}/photos?per_page=${unsplashConfig.perPage}`, { headers: headers })).json()
@@ -16,7 +16,8 @@ const randomIntFromInterval = (max) => {
 };
 
 export const render = ({ output }) => {
-    random = window.navigator.onLine && output ? randomIntFromInterval(output.length) : 0;
+    if(config.unsplash.enabled) {
+        random = window.navigator.onLine && output ? randomIntFromInterval(output.length) : 0;
     return (
         window.navigator.onLine ? (
             unsplashConfig ? (
@@ -35,4 +36,7 @@ export const render = ({ output }) => {
             )
 
     )
+    }
+    document.getElementById('unsplash-jsx').classList.add('none');
+    return ''
 };

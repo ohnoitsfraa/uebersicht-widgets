@@ -2,8 +2,11 @@ import config from './config/config';
 export const weatherConfig = config.weather;
 export const refreshFrequency = config.weather.refresh;
 export const command = async () => {
-    const result = await getLocation();
-    return getWeather(result.error ? weatherConfig.defaultLocation : result);
+    if (config.weather.enabled) {
+        const result = await getLocation();
+        return getWeather(result.error ? weatherConfig.defaultLocation : result);
+    }
+    return '';
 };
 
 const getLocation = () => new Promise((resolve, reject) => {
@@ -23,6 +26,7 @@ const kelvinToFahrenheit = (temp) => Math.round(parseInt(temp, 10) * (9 / 5) - 4
 const convertTemperature = (temp) => weatherConfig.unit === 'C' ? kelvinToCelsius(temp) : kelvinToFahrenheit(temp);
 
 export const render = ({ output, error }) => {
+    if(config.weather.enabled) {
     return window.navigator.onLine ? (
         output && output.error || error || !weatherConfig.appId || !output.name ? (
             <div className="error-msg">
@@ -67,4 +71,7 @@ export const render = ({ output, error }) => {
                 <i className="fas fa-ethernet"></i>
             </div>
         )
+    }
+    document.getElementById('weather-jsx').classList.add('none');
+    return ''
 };

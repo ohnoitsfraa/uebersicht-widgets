@@ -1,25 +1,31 @@
 {
   "style": {
+    "enabled": true,
     "accent": "#FB471E",
     "verticalAlign": "flex-start",
     "bgBlur": "20px",
     "textColor": "white"
   },
   "cpus": {
+    "enabled": true,
     "max": 4,
     "refresh": 5000
   },
   "memory": {
+    "enabled": true,
     "refresh": 3000
   },
   "date": {
+    "enabled": true,
     "refresh": 60000
   },
   "time": {
+    "enabled": true,
     "refresh": 1000,
     "words": false
   },
   "weather": {
+    "enabled": true,
     "appId": "",
     "defaultLocation": {
       "city": "Brussels",
@@ -29,14 +35,20 @@
     "refresh": 7200000
   },
   "unsplash": {
+    "enabled": true,
     "accessKey": "",
     "collectionId": "",
     "refresh": 3600000,
     "perPage": 50
   },
   "spotify": {
+    "enabled": true,
     "refresh": 100,
     "showArtwork": true,
     "showProgressBar": true
+  },
+  "battery": {
+    "enabled": true,
+    "refresh": 1000
   }
 }

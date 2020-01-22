@@ -4,11 +4,11 @@ import moment from '../node_modules/moment';
 export const refreshFrequency = config.time.words ? 3000 : config.time.refresh;
 export const command = dispatch => {
     const now = moment();
-    return {
+    return config.time.enabled ? {
         time: now.format('HH:mm:ss'),
         minute: parseInt(now.format('mm'), 10),
         hour: now.format('HH') % 12 === 0 ? 12 : now.format('HH') % 12
-    }
+    } : {}
 }
 export const initialState = { output: { time: moment().format('HH:MM:SS') } };
 const hours = [null, "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
@@ -35,24 +35,28 @@ const generateWords = (output) => {
 }
 
 export const render = ({ output }) => {
-    const result = config.time.words ? generateWords(output) : output;
-    return (
-        <div className="item has-icon time">
-            <div className="time">
-                <i className="icon far fa-clock" />
-                <span className="text">
-                    {
-                        config.time.words ? (
-                            <span className="words">
-                                <span className="hour">{result.hourText}</span>&nbsp;
+    if (config.time.enabled) {
+        const result = config.time.words ? generateWords(output) : output;
+        return (
+            <div className="item has-icon time">
+                <div className="time">
+                    <i className="icon far fa-clock" />
+                    <span className="text">
+                        {
+                            config.time.words ? (
+                                <span className="words">
+                                    <span className="hour">{result.hourText}</span>&nbsp;
                                 <span className="minute">{result.minuteText}</span>
-                            </span>
-                        ) : (
-                                result.time
-                            )
-                    }
-                </span>
+                                </span>
+                            ) : (
+                                    result.time
+                                )
+                        }
+                    </span>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+    document.getElementById('time-jsx').classList.add('none');
+    return ''
 }

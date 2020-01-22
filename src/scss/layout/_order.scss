@@ -1,39 +1,29 @@
 .widget {
-    &#fontAwesome-jsx,
-    &#googleFonts-jsx,
-    &#index-jsx {
-        display: none;
-    }
-
-    &#whoami-jsx {
+    &#spotify-jsx {
         order: 1;
     }
 
-    &#spotify-jsx {
+    &#weather-jsx {
         order: 2;
     }
 
-    &#weather-jsx {
+    &#cpu-jsx {
         order: 3;
     }
 
-    &#cpu-jsx {
+    &#memory-jsx {
         order: 4;
     }
 
-    &#memory-jsx {
+    &#date-jsx {
         order: 5;
     }
 
-    &#date-jsx {
+    &#time-jsx {
         order: 6;
     }
 
-    &#time-jsx {
+    &#battery-jsx {
         order: 7;
-
-        &::after {
-            content: none;
-        }
     }
 }
