@@ -24,13 +24,17 @@ export const render = ({ output }) => {
                     output && output.length > random ? (
                         <div className="unsplash">
                             <img alt="unsplash" className="image" src={output[random].urls.full} />
-                            <div className="credits">
-                                <div className="link">
-                                    <span className="description">{output[random]['alt_description'] || ''}</span>
-                                    <span className="by">&nbsp;by&nbsp;</span>
-                                    <span className="username">{output[random].user.username}</span>
-                                </div>
-                            </div>
+                            {
+                                config.unsplash && config.unsplash.showCredits ? (
+                                    <div className="credits">
+                                        <div className="link">
+                                            <span className="description">{output[random]['alt_description'] || ''}</span>
+                                            <span className="by">&nbsp;by&nbsp;</span>
+                                            <span className="username">{output[random].user.username}</span>
+                                        </div>
+                                    </div>
+                                ) : ''
+                            }
                         </div>
                     ) : 'error'
                 ) : (

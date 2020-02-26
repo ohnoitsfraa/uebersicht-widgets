@@ -91,7 +91,8 @@ The other properties in the config speak for themselves.
     "accessKey": "",
     "collectionId": "",
     "refresh": 3600000,
-    "perPage": 50
+    "perPage": 50,
+    "showCredits": true
   },
   "spotify": {
     "enabled": true,
@@ -101,7 +102,7 @@ The other properties in the config speak for themselves.
   },
   "battery": {
     "enabled": true,
-    "refresh": 3600000
+    "refresh": 1000
   }
 }
 ```

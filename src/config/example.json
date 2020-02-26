@@ -39,7 +39,8 @@
     "accessKey": "",
     "collectionId": "",
     "refresh": 3600000,
-    "perPage": 50
+    "perPage": 50,
+    "showCredits": true
   },
   "spotify": {
     "enabled": true,
