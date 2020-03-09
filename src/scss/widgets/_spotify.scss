@@ -19,8 +19,8 @@ $pausedColor: #aaa;
 
         img {
             border-radius: $borderRadius;
-            height: 100%;
-            width: 100%;
+            height: $dimensions;
+            width: $dimensions;
         }
 
         &::after {
