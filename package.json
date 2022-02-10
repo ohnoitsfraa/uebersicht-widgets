@@ -25,7 +25,7 @@
     "chalk": "^2.4.2",
     "moment": "^2.24.0",
     "ncp": "^2.0.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.4",
     "open-weather-icons": "0.0.8",
     "postcss": "^7.0.21",
